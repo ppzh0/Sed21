@@ -1,0 +1,175 @@
+@font-face {
+    font-family: poppins;
+    src: url(../fonts/Poppins.ttf);
+    font-family: "Sedwick Ave";
+    src: url(../fonts/Sedgwick-Ave.woff2);
+}
+
+.d-f {
+    display: flex;
+    align-items: center;
+}
+
+.t-ss {
+    font-family: "Sedwick Ave", Arial, Helvetica, sans-serif;
+    line-height: 1.7rem;
+    letter-spacing: 2px;
+}
+
+body {
+    font-family: poppins, Arial, Helvetica, sans-serif;
+    margin-bottom: 4rem;
+    /* body css declaration */
+}
+
+body>h1 {
+    display: none;
+}
+
+/* --------------------------------------------------- */
+/* ~~ nav section ~~ */
+nav {
+    justify-content: space-between;
+    /* gets a wide space between */
+}
+
+nav a {
+    text-decoration: none;
+}
+
+.navLink {
+    position: relative;
+    cursor: pointer;
+}
+
+.navLink::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    border-radius: 6px;
+    background-color: blue;
+    bottom: 0;
+    left: 0;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .2s cubic-bezier(0.88, 0, 0.03, 0.95);
+}
+
+.navLink:hover::before {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+.mainLink::before {
+    background: linear-gradient(60deg, red, blue, green, pink);
+}
+
+nav>section {
+    width: 400px;
+    justify-content: space-around;
+}
+
+/* --------------------------------------------------- */
+/* ~~ main content section ~~ */
+#body {
+    display: grid;
+    /* main section layout */
+    grid-template-columns:
+        repeat(auto-fill,
+            minmax(300px, 1fr));
+    /* with these widths */
+    gap: 6rem calc(3vh * 5);
+}
+
+#body article {
+    transition: box-shadow .5s ease-out;
+    /* box-shadow hover effect */
+}
+
+#body article:hover,
+#body article:focus {
+    box-shadow: 1px 1px 6px 2px rgb(0, 0, 0, .3);
+}
+
+#body article {
+    border-radius: 10px;
+    border: 1px solid #dadada;
+    padding: 10px;
+    /* main article section styles */
+}
+
+/* layout for childs of article */
+#body article {
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* --------------------------------------------------- */
+/* ~~ footer section ~~ */
+footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* --------------------------------------------------- */
+/* ~~ download form section ~~ */
+form {
+    flex-direction: column;
+
+}
+
+/* --------------------------------------------------- */
+/* ~~ image section ~~ */
+
+.img-box {
+    /* image cotainer */
+    padding: 6px;
+}
+
+.img-box figure {
+    text-align: center;
+}
+
+img {
+    /*  aspect ratio of images [responsive size] */
+    width: 100%;
+    height: auto;
+}
+
+
+
+/* --------------------------------------------------- */
+/* media queries */
+@media screen and (max-width: 401px) {
+    nav {
+        font-size: xx-small;
+        flex-direction: column;
+        align-items: center;
+    }
+
+}
+@media screen and (max-width: 400px) {
+    nav.d-f {
+        display: flex;
+    }
+
+}
+@media screen and/* If this width */(max-width: 319px) {
+/* those will process and work */
+    #body,
+    footer,
+    nav {
+        display: none !important;
+    }
+
+    body h1 {
+        display: contents;
+    }
+
+    body h1>p {
+        font-size: 10px;
+    }
+}
+
