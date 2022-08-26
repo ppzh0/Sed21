@@ -5,6 +5,12 @@
     src: url(../fonts/Sedgwick-Ave.woff2);
 }
 
+@import url(css.animation.css);
+
+html {
+    scroll-behavior: smooth;
+}
+
 .d-f {
     display: flex;
     align-items: center;
@@ -150,14 +156,20 @@ img {
     }
 
 }
+
 @media screen and (max-width: 400px) {
     nav.d-f {
         display: flex;
     }
 
 }
-@media screen and/* If this width */(max-width: 319px) {
-/* those will process and work */
+
+@media screen and
+
+/* If this width */
+(max-width: 319px) {
+
+    /* those will process and work */
     #body,
     footer,
     nav {
@@ -172,4 +184,3 @@ img {
         font-size: 10px;
     }
 }
-
